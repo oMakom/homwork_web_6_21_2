@@ -14,6 +14,34 @@ class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         """Метод для обработки входящих GET-запросов."""
         file_path = os.path.join(os.path.dirname(__file__), "contacts.html")
+        # проверка налисия файла
+        if not os.path.isfile(file_path):
+            # ФАЙЛА НЕТ → отдаём 404 и свою страницу ошибки
+            self.send_response(404)
+            self.send_header("Content-type", "text/html; charset=utf-8")
+            self.end_headers()
+
+            error_html = """
+                    <!DOCTYPE html>
+                    <html lang="ru">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Ошибка 404</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                            h1 { color: #d9534f; }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>404 — Файл contacts.html не найден!</h1>
+                        <p>Сервер не смог найти запрашиваемый файл.</p>
+                        <a href="/">Вернуться на главную</a>
+                    </body>
+                    </html>
+                    """
+            self.wfile.write(error_html.encode('utf-8'))
+            return  # Важно: выходим из метода, дальше ничего не делаем
+        #Читаем файле если есть
         with open(file_path, "rb") as file:
             content = file.read()
 
