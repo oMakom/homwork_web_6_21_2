@@ -31,7 +31,7 @@
             background-color: #0d6efd; /* Стандартный синий цвет Bootstrap */
         }
 
-        /* --- Стили для Карточек Товаров (под референс) --- */
+        /* --- Стили для Карточек Товаров --- */
         .product-card {
             border: none; /* Убираем стандартную рамку */
             box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Легкая тень */
@@ -62,15 +62,12 @@
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-
-    <!-- Основной контейнер: растягивается на всю высоту, меню слева, контент справа -->
+    <!-- Основной контейнер-->
     <div class="row m-0 flex-grow-1">
 
         <!-- ЛЕВАЯ КОЛОНКА: МЕНЮ -->
-        <!-- col-auto автоматически подстроится под ширину контента (240px), flex-shrink-0 не даст сжаться -->
         <div class="col-auto p-0" style="width: 240px;">
             <div class="d-flex flex-column justify-content-between h-100 flex-shrink-0 p-3 text-white bg-dark">
-
                 <!-- ВЕРХ: Логотип и заголовок -->
                 <div>
                     <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -78,8 +75,7 @@
                         <h4 class="card-title text-center m-0">Меню</h4>
                     </a>
                     <hr class="text-white-50">
-
-                    <!-- НАВИГАЦИЯ: исправленные nav-link классы для работы подсветки -->
+                    <!-- НАВИГАЦИЯ-->
                     <ul class="nav flex-column custom-menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link active" aria-current="page"><i class="bi bi-house-door me-2"></i>Главная</a>
@@ -96,7 +92,7 @@
                     </ul>
                 </div>
 
-                <!-- НИЗ: Профиль пользователя (прижат к низу благодаря justify-content-between) -->
+                <!-- НИЗ: Профиль пользователя -->
                 <div class="mt-auto">
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -112,7 +108,6 @@
                 </div>
             </div>
         </div>
-
         <!-- ПРАВАЯ КОЛОНКА: Контент -->
         <!-- col занимает все оставшееся место. p-0 убирает лишние отступы у самой колонки -->
         <div class="col p-0 bg-white">
@@ -170,7 +165,6 @@
             </div>
         </div>
     </div>
-
     <!-- Подключаем Bootstrap JS (для работы выпадающего списка профиля) -->
     <script src="static/js/bootstrap.bundle.min.js"></script>
 </body>
