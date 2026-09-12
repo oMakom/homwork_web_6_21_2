@@ -109,26 +109,29 @@
                     <!-- Колонка 1: Форма -->
                     <div class="col-12 col-md-5 mb-4 mb-md-0">
                         <div class="card border p-4 h-100">
-                            <form>
-                                <!-- Имя  -->
+                            <form action="http://localhost:8080" method="POST">
+                                <!-- Имя -->
                                 <div class="mb-4">
                                     <label for="name" class="form-label text-uppercase fw-bold small text-secondary">Имя</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Ваше имя">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
                                 </div>
-                                <!-- Почта  -->
+
+                                <!-- Почта -->
                                 <div class="mb-4">
                                     <label for="email" class="form-label text-uppercase fw-bold small text-secondary">Почта</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-white text-muted fw-bold ">@</span>
-                                        <input type="email" class="form-control" id="email" placeholder="example@mail.com">
+                                        <span class="input-group-text bg-white text-muted fw-bold">@</span>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
                                     </div>
                                 </div>
-                                <!-- сообщение  -->
+
+                                <!-- Сообщение -->
                                 <div class="mb-4">
                                     <label for="message" class="form-label text-uppercase fw-bold small text-secondary">Сообщение</label>
-                                    <textarea class="form-control" id="message" rows="4" placeholder="Ваше сообщение"></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ваше сообщение" required></textarea>
                                 </div>
-                                <!-- Кнопка  -->
+
+                                <!-- Кнопка -->
                                 <button type="submit" class="btn btn-primary">Отправить</button>
                             </form>
                         </div>
