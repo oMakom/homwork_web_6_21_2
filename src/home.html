@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Случайный магазин - Главная страница</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.0/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            min-height: 100vh;
+        }
+
+        /* --- Меню --- */
+        .custom-menu .nav-link {
+            color: rgba(255, 255, 255, 0.75) !important;
+            padding: 0.6rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+        }
+        .custom-menu .nav-link:hover {
+            color: #fff !important;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .custom-menu .nav-link.active {
+            color: #fff !important;
+            background-color: #0d6efd;
+        }
+
+        /* --- Карточки товаров --- */
+        .product-card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+            border-radius: 0 !important;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card .card-body {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .product-card .btn {
+            margin-top: auto;
+        }
+
+        .content-wrapper {
+            padding: 2rem 1.5rem;
+        }
+
+        /* --- Серая шапка --- */
+        .card-header-custom {
+            background-color: #f8f9fa; /* Светло‑серый цвет */
+            padding: 1rem;
+            text-align: center;
+            margin-top: -1px;
+            border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0 !important;
+            color: #333;
+        }
+
+        /* Внутренние отступы контента карточки */
+        .card-content-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="row m-0 flex-grow-1">
+
+        <!-- ЛЕВАЯ КОЛОНКА: МЕНЮ -->
+        <div class="col-auto p-0" style="width: 240px;">
+            <div class="d-flex flex-column justify-content-between h-100 flex-shrink-0 p-3 text-white bg-dark">
+                <div>
+                    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <i class="bi bi-bootstrap me-1" style="font-size: 1.7rem;"></i>
+                        <h4 class="card-title text-center m-0">Меню</h4>
+                    </a>
+                    <hr class="text-white-50">
+                    <ul class="nav flex-column custom-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" aria-current="page"><i class="bi bi-house-door me-2"></i>Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="bi bi-speedometer2 me-2"></i>Категории</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="bi bi-table me-2"></i>Заказы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="bi bi-person-circle me-2"></i>Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-auto">
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="rounded-circle me-2 bg-white" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #333;"></div>
+                            <strong>Пользователь</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">Профиль</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Выход</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА: Контент -->
+        <div class="col p-0 bg-white">
+            <div class="content-wrapper">
+                <h1 class="card-title text-center mb-4">Главная</h1>
+                <p class="card-title text-center text-muted mb-5">Вы находитесь на сайте, предназначенном для продажи товаров</p>
+
+                <div class="row gx-4">
+
+                    <!-- Товар 1:  -->
+                    <div class="col-12 col-md-4 mb-4 mb-md-0">
+                        <div class="card product-card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <!-- Серая шапка -->
+                                <div class="card-header-custom">
+                                    <h5 class="card-title m-0 fw-bold text-dark">Товар 1</h5>
+                                </div>
+                                <!-- Контент карточки -->
+                                <div class="card-content-body">
+                                    <h3 class="card-text text-center fw-bold mb-3">$100</h3>
+                                    <p class="card-text text-center text-muted small flex-grow-1">
+                                        До 10 пользователей, 2Гб хранилище, поддержка
+                                    </p>
+                                </div>
+                                <div class="p-3 pt-0">
+                                    <a href="#" class="btn btn-outline-primary w-100">Купить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Товар 2: -->
+                    <div class="col-12 col-md-4 mb-4 mb-md-0">
+                        <div class="card product-card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="card-header-custom">
+                                    <h5 class="card-title m-0 fw-bold text-dark">Товар 2</h5>
+                                </div>
+                                <div class="card-content-body">
+                                    <h3 class="card-text text-center fw-bold mb-3">$100</h3>
+                                    <p class="card-text text-center text-muted small flex-grow-1">
+                                        До 10 пользователей, 2Гб хранилище, поддержка
+                                    </p>
+                                </div>
+                                <div class="p-3 pt-0">
+                                    <a href="#" class="btn btn-outline-primary w-100">Купить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Товар 3:  -->
+                    <div class="col-12 col-md-4 mb-4 mb-md-0">
+                        <div class="card product-card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="card-header-custom">
+                                    <h5 class="card-title m-0 fw-bold text-dark">Товар 3</h5>
+                                </div>
+                                <div class="card-content-body">
+                                    <h3 class="card-text text-center fw-bold mb-3">$100</h3>
+                                    <p class="card-text text-center text-muted small flex-grow-1">
+                                        До 10 пользователей, 2Гб хранилище, поддержка
+                                    </p>
+                                </div>
+                                <div class="p-3 pt-0">
+                                    <a href="#" class="btn btn-outline-primary w-100">Купить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

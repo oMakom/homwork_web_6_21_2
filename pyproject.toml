@@ -1,7 +1,7 @@
 [project]
-name = "coursepaper"
+name = "DZ21-2"
 version = "0.1.0"
-description = "Курсовая работа"
+description = "Домашняя работа"
 authors = [
     {name = "Pavel",email = "omakom@mail.ru"}
 ]
